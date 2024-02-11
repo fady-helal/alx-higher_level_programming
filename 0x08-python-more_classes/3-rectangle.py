@@ -56,6 +56,9 @@ class Rectangle:
 
         Represents the rectangle with the # character.
         """
+
+        if self.__width == 0 or self.__height == 0:
+            return ("")
         for row in range(self.__height):
             for col in range(self.__width):
                 print("#", end = "")
