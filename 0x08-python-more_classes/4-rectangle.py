@@ -61,7 +61,7 @@ class Rectangle:
             rec += "\n".join("#" * self.__width for j in range(self.__height))
         return rec
 
-def __repr__(self):
+    def __repr__(self):
         """Return the string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
