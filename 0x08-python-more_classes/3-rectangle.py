@@ -61,5 +61,5 @@ class Rectangle:
             return ("")
         for row in range(self.__height):
             for col in range(self.__width):
-                print("#", end = "")
+                print(str("#"), end = "")
             print()
