@@ -80,3 +80,40 @@ class Rectangle(Base):
         rec = ""
         rec += "/n" * self.y .join(self.x * " " + "#" * self.__width for j in self.__height)
         return rec
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """update the value"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        '''Updates instance attributes via no-keyword & keyword args.'''
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+    
+
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+
+    def __str__(self):
+        """Return the print() and str() representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, + \
+                                                    self.x, self.y, + \
+                                                    self.width, self.height)
