@@ -76,10 +76,11 @@ class Rectangle(Base):
         return (self.__height * self.__width)
 
     def display(self):
-        """print Rectangle by # """
-        rec = ""
-        rec += "/n" * self.y .join(self.x * " " + "#" * self.__width for j in self.__height)
-        return rec
+        """ Print Rectangle With # """
+        for i in range(0, self.y):
+            print()
+        for h in range(0, self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
         """update the value"""
