@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 from models.rectangle import Rectangle
+
+
 class Square(Rectangle):
     """ Class Square """
     def __init__(self, size, x=0, y=0, id=None):
@@ -15,7 +17,7 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
-    
+
     def update(self, *args, **kwargs):
         """ Convert Attributes To Dictionary """
         if args:
@@ -26,7 +28,6 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if hasattr(self, key):
                     setattr(self, key, value)
-    
 
     def to_dictionary(self):
         """ return Dictionary """
@@ -37,8 +38,6 @@ class Square(Rectangle):
                 'y': self.y
                 }
         return dic
-
-
 
     def __str__(self):
         """ return representation of square class."""
