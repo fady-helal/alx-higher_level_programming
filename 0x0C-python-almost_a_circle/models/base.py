@@ -2,6 +2,7 @@
 import json
 """Defines a base model class."""
 
+
 class Base:
     """Base model."""
     __nb_objects = 0
@@ -25,7 +26,6 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-    
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs to a file."""
@@ -35,7 +35,6 @@ class Base:
         with open(filename, 'w') as file:
             file.write(
                 cls.to_json_string([obj.to_dictionary() for obj in list_objs]))
-    
 
     @staticmethod
     def from_json_string(json_string):
@@ -56,7 +55,7 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
-    
+
     @classmethod
     def load_from_file(cls):
         """ Loads the JSON string representation of list_objs to a file."""
