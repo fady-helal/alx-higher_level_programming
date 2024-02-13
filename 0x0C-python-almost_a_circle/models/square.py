@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+This Module Contains :
+    - Square Class That Inherits <--- Rectangle
+"""
 from models.rectangle import Rectangle
 
 
