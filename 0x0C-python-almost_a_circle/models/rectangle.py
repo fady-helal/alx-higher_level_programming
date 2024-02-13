@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Defines a rectangle class."""
 from models.base import Base
+
+
 class Rectangle(Base):
     """Represent a rectangle."""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -101,7 +103,6 @@ class Rectangle(Base):
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
-    
 
     def to_dictionary(self):
         """Return the dictionary representation of a Rectangle."""
@@ -114,7 +115,6 @@ class Rectangle(Base):
         }
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, + \
-                                                    self.x, self.y, + \
-                                                    self.width, self.height)
+        """ Formal Info About Class Atrributes """
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
