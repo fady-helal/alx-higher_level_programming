@@ -68,3 +68,73 @@ class Base:
                 return instances
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Save CSV Data """
+        filename = cls.__name__ + ".csv"
+        if list_objs is None:
+            list_objs = []
+        with open(filename, mode="w", newline='') as Ofile:
+            writer = csv.writer(Ofile)
+            for obj in list_objs:
+                writer.writerow(obj.to_csv())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Load CSV Data """
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode="r", encoding="utf-8") as Ofile:
+                aha = csv.reader(Ofile)
+                obj = []
+                for row in aha:
+                    obj.append(cls.from_csv(row))
+                return obj
+        except FileNotFoundError:
+            return []
+
+    def to_csv(self):
+        """ Convert To CSV """
+        pass
+
+    @classmethod
+    def from_csv(cls, row):
+        """ Decode From CSV """
+        pass
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ Draw Shapes """
+        pen = turtle.Turtle()
+
+        def draw_rectangle(x, y, width, height):
+            """ Draw Rectangle """
+            pen.penup()
+            pen.goto(x, y)
+            pen.pendown()
+            for _ in range(2):
+                pen.forward(width)
+                pen.left(90)
+                pen.forward(height)
+                pen.left(90)
+
+        def draw_square(x, y, size):
+            """ Draw Square """
+            pen.penup()
+            pen.goto(x, y)
+            pen.pendown()
+            for _ in range(4):
+                pen.forward(size)
+                pen.left(90)
+
+        pen.color("blue")
+        for rectangle in list_rectangles:
+            x, y, width, height = rectangle.x,
+            rectangle.y, rectangle.width, rectangle.height
+            draw_rectangle(x, y, width, height)
+
+        pen.color("blue")
+        for square in list_squares:
+            x, y, size = square.x, square.y, square.size
+            draw_square(x, y, size)
