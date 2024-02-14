@@ -1,16 +1,13 @@
-#!/usr/bin/python3
-def read_file(filename = ""):
-    with open(filename, 'r', encoding ="UTF-8" ) as f:
-        print(f.read())
+def update(*args):
+    res = ""
+    len_args = len(args)
+    print(len_args)
+    for i in args:
+        res += i
+    return res
 
 
-def write_file(filename="", text=""):
-    with open(filename, 'w', encoding ="UTF-8" ) as f:
-        return f.write(text)
 
 
-
-def to_json_string(my_obj):
-    import json
-    json_string = json.dumps(my_obj)
-    return json_string
+name1 = update("fady", "helal", "sobhy")
+print(name1)
