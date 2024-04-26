@@ -2,6 +2,8 @@
 """script that fetches https://alx-intranet.hbtn.io/status."""
 from urllib.request import urlopen
 from pprint import pprint
+
+
 if __name__ == "__main__":
   with urlopen("https://alx-intranet.hbtn.io/status") as response:
     body = response.read()
