@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""script that fetches https://alx-intranet.hbtn.io/status."""
 from urllib.request import urlopen
 from pprint import pprint
 with urlopen("https://alx-intranet.hbtn.io/status") as response:
